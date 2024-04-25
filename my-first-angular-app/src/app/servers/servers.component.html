@@ -1,0 +1,42 @@
+<label>Server Name</label>
+<input type="text"
+class="form-control"
+(input)="onUpdateServerName($event)">
+<p>{{ serverName }}</p>
+
+<input type="text"
+class="form-control"
+[(ngModel)] = "serverName">
+<!-- <p>{{ serverName }}</p> -->
+<!-- *   2. Property binding: Binding component properties to DOM element properties. -->
+<button class="btn btn-primary" [disabled] = "!allowNewServer" (click) = "onCreateServer()">Add Server</button> 
+<!-- * String Interpolation: -->
+<!-- <p [innerText] = "allowNewServer"></p> -->
+<!-- String interpolation is a feature in Angular that allows you to incorporate expressions and variables directly into your template HTML. It's a convenient way to display component data dynamically. Here's a definition:
+
+/**
+ * 3. String Interpolation:
+ * - String interpolation is a mechanism in Angular that allows you to embed expressions and variables directly into template HTML.
+ * - It is denoted by double curly braces {{ }} in the HTML template.
+ * - Inside the braces, you can include component properties, methods, or expressions that Angular evaluates and replaces with their current values.
+ * - String interpolation is a one-way data binding method, meaning data flows from the component to the template but not vice versa.
+ * - It is commonly used for displaying dynamic content such as variable values, computed results, or messages in Angular applications.
+ */
+-->
+
+<!-- * Key Difference between Property binding and String Interpolation :
+* - Property binding is used to set element properties dynamically based on component data, while string interpolation is used to embed dynamic values directly into the template HTML.
+* - Property binding binds component properties to HTML element properties, whereas string interpolation evaluates expressions and replaces them with their values.
+* - Property binding uses square brackets syntax, while string interpolation uses double curly braces. -->
+
+<p>{{serverCreationStatus}}</p>
+<app-server></app-server>
+<app-server></app-server>
+
+<!-- 4.Event Binding: 
+ * -  Event binding is a technique in Angular that allows you to capture and respond to user-triggered events in the application.
+ * - It establishes a connection between DOM events (such as clicks, key presses, mouse movements, etc.) and methods defined in the component class.
+ * - Event binding is implemented using parentheses (event)="handler()" syntax in the HTML template, where "event" is the name of the DOM event, and "handler()" is the method in the component class that should be executed when the event occurs.
+ * - When the specified event is triggered by the user, Angular calls the associated method in the component class to perform the desired action or logic.
+ * - Event binding enables interactive features in Angular applications by allowing components to respond dynamically to user inputs.
+ *- Example: /(click) = "onCreateServer()" -->
